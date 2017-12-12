@@ -1,0 +1,36 @@
+#include "stdafx.h"
+#include "windows.h"
+#include "iostream" 
+#define M_PI   3.141592
+#include "cmath"
+
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{	
+	int x, y, n = 5;
+	printf("Enter x =");
+	scanf_s("%d",&x);
+	float rez;
+	int sum=0;
+	for (int k=1; k<6; k++)
+	{   if (x > 0)
+		sum=cos(x*M_PI/180) * log(k*x);
+	}
+	rez = sum / 0.5 * pow (x, 5);
+	printf("Y=%f\n",rez);
+
+	printf ("Enter y =");
+	scanf_s("%d", &y);
+	sum = 0;
+	for (int k = 1; k < 6; k++)
+	{
+		sum *= k;
+		sum = sum * log(k*y);
+	}
+	rez = sum + pow(y, 5); 
+	printf("Z=%f\n",rez);
+	system("pause");
+	return 0;
+}
